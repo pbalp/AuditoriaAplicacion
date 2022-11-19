@@ -1,0 +1,16 @@
+LOAD DATA LOCAL INFILE '/home/uo258740/aplicacion/aplicacion/datos/usuarios.csv' INTO TABLE usuario FIELDS TERMINATED BY ';';
+
+LOAD DATA LOCAL INFILE '/home/uo258740/aplicacion/aplicacion/datos/conductores.csv' INTO TABLE conductor FIELDS TERMINATED BY ';';
+
+LOAD DATA LOCAL INFILE '/home/uo258740/aplicacion/aplicacion/datos/administrador.csv' INTO TABLE administrador FIELDS TERMINATED BY ';';
+
+LOAD DATA LOCAL INFILE '/home/uo258740/aplicacion/aplicacion/datos/autobuses.csv' INTO TABLE autobus FIELDS TERMINATED BY ';';
+
+LOAD DATA LOCAL INFILE '/home/uo258740/aplicacion/aplicacion/datos/rutas.csv' INTO TABLE ruta FIELDS TERMINATED BY ';';
+
+LOAD DATA LOCAL INFILE '/home/uo258740/aplicacion/aplicacion/datos/viajes.csv' INTO TABLE viaje FIELDS TERMINATED BY ';';
+
+LOAD DATA LOCAL INFILE '/home/uo258740/aplicacion/aplicacion/datos/billetes.csv' INTO TABLE billete FIELDS TERMINATED BY ';';
+
+LOAD DATA LOCAL INFILE '/home/uo258740/aplicaciontfg/microservicios/test/datos/administrador.csv' INTO TABLE usuario FIELDS TERMINATED BY ';';
+

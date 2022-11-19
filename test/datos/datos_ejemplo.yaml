@@ -1,0 +1,226 @@
+administrador:
+-
+    nombre: Admin
+    apellidos: Admin Admin
+    dni: 12345678A
+    correo: admin@email.com
+    password: $2b$12$k7CRafYOhNtd6J5cKKFm8.bknhfZbqkS4pHhD/OwnUoDwD/ObIUCy
+    telefono: "641002835"
+    rol: administrador
+    informacion: admin
+cliente:
+-
+    nombre: Fernando
+    apellidos: Martinez Gomez
+    dni: 41200658N
+    correo: fernandomg@email.com
+    password: $2b$12$yl9Ko0xABjUWEJQotRRB8eEMDzc9nZfT9kDucraqMT0g0/ceK7vuW
+    telefono: "674120358"
+    rol: cliente
+    puntos: 90
+-
+    nombre: Ana
+    apellidos: Fernandez Perez
+    dni: 71863220L
+    correo: anafp@email.com
+    password: $2b$12$bvOrXT.NB62iqVMCU1EoOOf2R6.Potl2vH8uE8z1v5WhToM7EnqGW
+    telefono: "632587441"
+    rol: cliente
+    puntos: 120
+-
+    nombre: Juan
+    apellidos: Garcia Rivas
+    dni: 01478632W
+    correo: juangr@email.com
+    password: $2b$12$R.NAdWZ24SQZmH2TRpGzV.kq//V0aWvPHTs0D09HJzK2QX5CY13W6
+    telefono: "612035889"
+    rol: cliente
+    puntos: 230
+-
+    nombre: Hugo
+    apellidos: Morales Cuevas
+    dni: 76201443F
+    correo: hugomc@email.com
+    password: $2b$12$ebfBN/3pmKquQxKMXrQUruW50L1H7WW1t35Qm.r5osvLPbfgGGWlW
+    telefono: "622033587"
+    rol: cliente
+    puntos: 170
+-
+    nombre: Maria
+    apellidos: Dominguez Diaz
+    dni: 52310489K
+    correo: mariadd@email.com
+    password: $2b$12$kxunccyquJd6kH.nLP1Mh.VU776vDn2kUajiSJ2FEalktCYZFsZAC
+    telefono: "630255789"
+    rol: cliente
+    puntos: 80
+-
+    nombre: Carmen
+    apellidos: Arias Pelaez
+    dni: 30255749H
+    correo: carmenap@email.com
+    password: $2b$12$bDJ6F9G/p6cZYmZHzYYdhOUV7gbraq1ZV3Q/iLcd3O16MirXVUDRC
+    telefono: "678944115"
+    rol: cliente
+    puntos: 290
+conductor:
+-
+    nombre: Carlos
+    apellidos: Sevilla Perez
+    dni: 78933254T
+    correo: carlossp@email.com
+    password: $2b$12$lVA8WbglHv9dDJdk0FPwBOjad.2Vsc9f2cgc91figgp4ChNLhQH4S
+    telefono: "644752331"
+    rol: conductor
+    experiencia: carlos
+-
+    nombre: Rosa
+    apellidos: Cuesta Juarez
+    dni: 02544113U
+    correo: rosacj@email.com
+    password: $2b$12$/bKF8IN.AKFSmmfaWpMqje01MepUWMbQVGy6Ut1oUj2z/CBY.1cwO
+    telefono: "647852015"
+    rol: conductor
+    experiencia: rosa    
+-
+    nombre: Victor
+    apellidos: Suarez Castrillo
+    dni: 70569882R
+    correo: victorsc@email.com
+    password: $2b$12$JHuaqTv6lM.rU0o6tF694u0tKERLmXdKL0XaWHMuEaztP0p4xowF2
+    telefono: "654789230"
+    rol: conductor
+    experiencia: victor    
+ruta:
+-
+    numeroCiudades: 4
+    ciudades: Madrid Guadalajara Cuenca Valencia
+-
+    numeroCiudades: 5
+    ciudades: Coruña Santiago Gijon Santander Bilbao
+-
+    numeroCiudades: 6
+    ciudades: Gijon Leon Salamanca Caceres Merida Sevilla
+-
+    numeroCiudades: 5
+    ciudades: Barcelona Zaragoza Soria Segovia Madrid
+autobus:
+-
+    modelo: Mercedes
+    asientos: 45
+    asientosLibres: 45
+-
+    modelo: Volvo
+    asientos: 40
+    asientosLibres: 40
+-
+    modelo: Setra
+    asientos: 35
+    asientosLibres: 35
+-
+    modelo: Man
+    asientos: 35
+    asientosLibres: 35
+
+viaje:
+-
+    conductor: 8
+    autobus: 4
+    ruta: 2
+    precio: 15
+-
+    conductor: 9
+    autobus: 3
+    ruta: 4
+    precio: 12.5
+-
+    conductor: 10
+    autobus: 2
+    ruta: 3
+    precio: 11.3
+-
+    conductor: 9
+    autobus: 1
+    ruta: 1
+    precio: 10.7
+-
+    conductor: 10
+    autobus: 4
+    ruta: 3
+    precio: 14
+-
+    conductor: 8
+    autobus: 1
+    ruta: 4
+    precio: 12.6
+-
+    conductor: 10
+    autobus: 2
+    ruta: 1
+    precio: 16.3
+-
+    conductor: 8
+    autobus: 3
+    ruta: 1
+    precio: 13.9
+-
+    conductor: 9
+    autobus: 4
+    ruta: 2
+    precio: 14.2
+
+billete:
+-
+    cliente: 2
+    viaje: 8
+    fechaSalida: 2022-05-04T10:30:00
+    fechaLlegada: 2022-05-04T13:00:00
+    asiento: 15
+-
+    cliente: 3
+    viaje: 7
+    fechaSalida: 2022-03-15T15:00:00
+    fechaLlegada: 2022-03-15T17:00:00
+    asiento: 36
+-
+    cliente: 4
+    viaje: 3
+    fechaSalida: 2022-03-23T23:00:00
+    fechaLlegada: 2022-03-24T01:00:00
+    asiento: 2
+-
+    cliente: 1
+    viaje: 2
+    fechaSalida: 2022-02-28T20:30:00
+    fechaLlegada: 2022-02-28T23:30:00
+    asiento: 4
+-
+    cliente: 2
+    viaje: 1
+    fechaSalida: 2022-04-10T16:30:00
+    fechaLlegada: 2022-04-10T21:00:00
+    asiento: 30
+-
+    cliente: 1
+    viaje: 9
+    fechaSalida: 2022-04-25T14:30:00
+    fechaLlegada: 2022-04-25T19:30:00
+    asiento: 42
+-
+    cliente: 3
+    viaje: 5
+    fechaSalida: 2022-03-17T05:00:00
+    fechaLlegada: 2022-03-17T09:00:00
+    asiento: 40
+-
+    cliente: 4
+    viaje: 4
+    fechaSalida: 2022-02-14T08:00:00
+    fechaLlegada: 2022-02-14T10:30:00
+    asiento: 16
+-
+    cliente: 3
+    viaje: 6
+    fechaSalida: 2022-05-02T17:00:00
+    fechaLlegada: 2022-05-02T20:30:00
+    asiento: 28

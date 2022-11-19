@@ -1,0 +1,171 @@
+#docker-compose.yml (Base)
+version: '3.4'
+
+
+services:
+  nginx:
+    image: nginx:${TAG:-latest}
+    container_name: nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./proxy.conf:/etc/nginx/conf.d/default.conf
+    restart: on-failure
+    depends_on:
+      - autenticacion
+      - clientes
+      - personal
+      - billetes
+      - autobuses
+
+  #mariadb:
+  #  image: mariadb:${TAG:-latest}
+  #  container_name: mariadb
+  #  volumes:
+  #    - ./mariadb:/var/lib/mysql
+      #- ./mariadb:/run/mysqld/mysqld.sock
+    #env_file:
+    #  - ./env.file
+  #  environment: 
+  #    - MARIADB_USER=${user}
+  #    - MARIADB_PASSWORD=${password}
+  #    - MARIADB_ROOT_PASSWORD=${password}
+  #    - MARIADB_DATABASE=${db}
+      #- DATABASE_URI=mysql+pymysql://uo258740:rom31abi@localhost:3306/db2
+      #172.17.0.2
+
+  dbAutenticacion:
+    image: mariadb
+    container_name: dbAutenticacion
+    volumes:
+      - ./dbAutenticacion:/var/lib/mysql
+    restart: on-failure
+    environment: 
+      - MARIADB_USER=${user}
+      - MARIADB_PASSWORD=${password}
+      - MARIADB_ROOT_PASSWORD=${password}
+      - MARIADB_DATABASE=${dbAutenticacion}
+
+  dbClientes:
+    image: mariadb
+    container_name: dbClientes
+    volumes:
+      - ./dbClientes:/var/lib/mysql
+    restart: on-failure
+    environment: 
+      - MARIADB_USER=${user}
+      - MARIADB_PASSWORD=${password}
+      - MARIADB_ROOT_PASSWORD=${password}
+      - MARIADB_DATABASE=${dbClientes}
+
+  dbPersonal:
+    image: mariadb
+    container_name: dbPersonal
+    volumes:
+      - ./dbPersonal:/var/lib/mysql
+    restart: on-failure
+    environment: 
+      - MARIADB_USER=${user}
+      - MARIADB_PASSWORD=${password}
+      - MARIADB_ROOT_PASSWORD=${password}
+      - MARIADB_DATABASE=${dbPersonal}
+
+  dbBilletes:
+    image: mariadb
+    container_name: dbBilletes
+    volumes:
+      - ./dbBilletes:/var/lib/mysql
+    restart: on-failure
+    environment: 
+      - MARIADB_USER=${user}
+      - MARIADB_PASSWORD=${password}
+      - MARIADB_ROOT_PASSWORD=${password}
+      - MARIADB_DATABASE=${dbBilletes}
+
+  dbAutobuses:
+    image: mariadb
+    container_name: dbAutobuses
+    volumes:
+      - ./dbAutobuses:/var/lib/mysql
+    restart: on-failure
+    environment: 
+      - MARIADB_USER=${user}
+      - MARIADB_PASSWORD=${password}
+      - MARIADB_ROOT_PASSWORD=${password}
+      - MARIADB_DATABASE=${dbAutobuses}
+
+  autenticacion:
+    image: autenticacion:${TAG:-latest}
+    container_name: autenticacion
+    build:
+      context: ./GestionAutenticacion
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8000"
+    restart: on-failure
+    environment: 
+      - dbAutenticacionURL=${dbAutenticacion_URL}
+    depends_on:
+      #- mariadb
+      - dbAutenticacion
+
+  clientes:
+    image: clientes:${TAG:-latest}
+    container_name: clientes
+    build:
+      context: ./GestionClientes
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8000"
+    restart: on-failure
+    environment: 
+      - dbClientesURL=${dbClientes_URL}
+    depends_on:
+      #- mariadb
+       - dbClientes
+
+  personal:
+    image: personal:${TAG:-latest}
+    container_name: personal
+    build:
+      context: ./GestionPersonal
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8000"
+    restart: on-failure
+    environment: 
+      - dbPersonalURL=${dbPersonal_URL}
+    depends_on:
+      #- mariadb
+       - dbPersonal
+
+  billetes:
+    image: billetes:${TAG:-latest}
+    container_name: billetes
+    build:
+      context: ./GestionBilletes
+      dockerfile: Dockerfile
+    ports:
+      - "8004:8000"
+    restart: on-failure
+    environment: 
+      - dbBilletesURL=${dbBilletes_URL}
+    depends_on:
+      #- mariadb
+       - dbBilletes
+
+  autobuses:
+    image: autobuses:${TAG:-latest}
+    container_name: autobuses
+    build:
+      context: ./GestionAutobuses
+      dockerfile: Dockerfile
+    ports:
+      - "8005:8000"
+    restart: on-failure
+    environment: 
+      - dbAutobusesURL=${dbAutobuses_URL}
+    depends_on:
+      #- mariadb
+       - dbAutobuses
+

@@ -1,0 +1,103 @@
+#docker-compose.yml (Base)
+version: '3.4'
+
+networks:
+  aplicacion-network:
+
+services:
+  servicio1:
+    image: servicio1:${TAG:-latest}
+    build:
+      context: ./GestionAutenticacion
+      dockerfile: Dockerfile
+    command: cd ..; uvicorn GestionAutenticacion.main:app
+    ports:
+      - "8001:8001"
+    #  - "8000:8001"
+    networks:
+      - aplicacion-network
+    #depends_on:
+    #  - basketdata
+    #  - identity-api
+    #  - rabbitmq
+
+  servicio2:
+    image: servicio2:${TAG:-latest}
+    build:
+      context: ./GestionClientes
+      dockerfile: Dockerfile
+    command: cd ..; uvicorn GestionClientes.main:app
+    ports:
+      - "8002:8002"
+      - "8000:8002"
+    networks:
+      - aplicacion-networks
+    
+    #depends_on:
+    #  - sqldata
+    #  - rabbitmq
+
+  servicio3:
+    image: servicio3:${TAG:-latest}
+    build:
+      context: ./GestionPersonal
+      dockerfile: Dockerfile
+    command: cd ..; uvicorn GestionPersonal.main:app
+    ports:
+      - "8003:8003"
+    #  - "8000:8003"
+    networks:
+      - aplicacion-network
+    #depends_on:
+    #  - sqldata
+    #  - nosqldata
+    #  - identity-api
+    #  - rabbitmq
+
+  servicio4:
+    image: servicio4:${TAG:-latest}
+    build:
+      context: ./GestionBilletes
+      dockerfile: Dockerfile
+    command: cd ..; uvicorn GestionBilletes.main:app
+    ports:
+      - "8004:8004"
+    #  - "8000:8004"
+    networks:
+      - aplicacion-network
+    #depends_on:
+    #  - catalog-api
+    #  - ordering-api
+    #  - identity-api
+    #  - basket-api
+    #  - marketing-api
+
+  servicio5:
+    image: servicio5:${TAG:-latest}
+    build:
+      context: ./GestionAutobuses
+      dockerfile: Dockerfile
+    command: cd ..; uvicorn GestionAutobuses.main:app
+    ports:
+      - "8005:8005"
+    #  - "8000:8005"
+    networks:
+      - aplicacion-network
+  # depends_on:
+  #   - catalog-api
+  #   - ordering-api
+  #   - identity-api
+  #   - basket-api
+  #   - marketing-api
+
+  #sqldata:
+  #  image: mcr.microsoft.com/mssql/server:2019-latest
+
+  #nosqldata:
+  #  image: mongo
+
+  #basketdata:
+  #  image: redis
+
+  #rabbitmq:
+  #  image: rabbitmq:3-management

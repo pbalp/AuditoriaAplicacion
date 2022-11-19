@@ -1,0 +1,11 @@
+id;nombre;apellidos;dni;correo;password;telefono;rol
+1;Admin;Admin Admin;12345678A;admin@email.com;$2b$12$k7CRafYOhNtd6J5cKKFm8.bknhfZbqkS4pHhD/OwnUoDwD/ObIUCy;641002835;administrador
+2;Fernando;Martinez Gomez;41200658N;fernandomg@email.com;$2b$12$yl9Ko0xABjUWEJQotRRB8eEMDzc9nZfT9kDucraqMT0g0/ceK7vuW;674120358;cliente
+3;Ana;Fernandez Perez;71863220L;anafp@email.com;$2b$12$bvOrXT.NB62iqVMCU1EoOOf2R6.Potl2vH8uE8z1v5WhToM7EnqGW;632587441;cliente
+4;Juan;Garcia Rivas;01478632W;juangr@email.com;$2b$12$R.NAdWZ24SQZmH2TRpGzV.kq//V0aWvPHTs0D09HJzK2QX5CY13W6;612035889;cliente
+5;Hugo;Morales Cuevas;76201443F;hugomc@email.com;$2b$12$ebfBN/3pmKquQxKMXrQUruW50L1H7WW1t35Qm.r5osvLPbfgGGWlW;622033587;cliente
+6;Maria;Dominguez Diaz;52310489K;mariadd@email.com;$2b$12$kxunccyquJd6kH.nLP1Mh.VU776vDn2kUajiSJ2FEalktCYZFsZAC;630255789;cliente
+7;Carmen;Arias Pelaez;30255749H;carmenap@email.com;$2b$12$bDJ6F9G/p6cZYmZHzYYdhOUV7gbraq1ZV3Q/iLcd3O16MirXVUDRC;678944115;cliente
+8;Carlos;Sevilla Perez;78933254T;carlossp@email.com;$2b$12$lVA8WbglHv9dDJdk0FPwBOjad.2Vsc9f2cgc91figgp4ChNLhQH4S;644752331;conductor
+9;Rosa;Cuesta Juarez;02544113U;rosacj@email.com;$2b$12$/bKF8IN.AKFSmmfaWpMqje01MepUWMbQVGy6Ut1oUj2z/CBY.1cwO;647852015;conductor
+10;Victor;Suarez Castrillo;70569882R;victorsc@email.com;$2b$12$JHuaqTv6lM.rU0o6tF694u0tKERLmXdKL0XaWHMuEaztP0p4xowF2;654789230;conductor
